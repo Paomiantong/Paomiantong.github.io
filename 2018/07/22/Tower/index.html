@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="死宅桶的博客">
 <meta property="og:description" content="数塔问题 时间限制: 1 Sec  内存限制: 128 MB 问题描述考虑在下面被显示的数字金字塔：12345        7       3   8     8   1   0   2   7   4   4 4   5   2   6   5 　　写一个程序来计算从最高点开始在底部任意处结束的路径经过数字的和的最大。每一步可以走到左下方的点也可以到达右下方的点。  　　在上面的样例中,从7到">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-22T11:27:09.099Z">
+<meta property="og:updated_time" content="2018-07-25T12:09:31.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数塔问题">
 <meta name="twitter:description" content="数塔问题 时间限制: 1 Sec  内存限制: 128 MB 问题描述考虑在下面被显示的数字金字塔：12345        7       3   8     8   1   0   2   7   4   4 4   5   2   6   5 　　写一个程序来计算从最高点开始在底部任意处结束的路径经过数字的和的最大。每一步可以走到左下方的点也可以到达右下方的点。  　　在上面的样例中,从7到">
@@ -343,12 +343,24 @@
                 
               
 
-              <time title="创建时间：2018-07-22 16:03:00 / 修改时间：19:27:09" itemprop="dateCreated datePublished" datetime="2018-07-22T16:03:00+08:00">2018-07-22</time>
+              <time title="创建时间：2018-07-22 16:03:00" itemprop="dateCreated datePublished" datetime="2018-07-22T16:03:00+08:00">2018-07-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-25 20:09:31" itemprop="dateModified" datetime="2018-07-25T20:09:31+08:00">2018-07-25</time>
               
             
           </span>
@@ -414,7 +426,7 @@
       
 
       
-        <p></p><h4 align="center">数塔问题<p></p>
+        <p></p><h1 align="center">数塔问题</h1><p></p>
 <p><center>时间限制: 1 Sec  内存限制: 128 MB</center></p>
 <h6 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h6><p>考虑在下面被显示的数字金字塔：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">        <span class="number">7</span> </span><br><span class="line">      <span class="number">3</span>   <span class="number">8</span> </span><br><span class="line">    <span class="number">8</span>   <span class="number">1</span>   <span class="number">0</span> </span><br><span class="line">  <span class="number">2</span>   <span class="number">7</span>   <span class="number">4</span>   <span class="number">4</span> </span><br><span class="line"><span class="number">4</span>   <span class="number">5</span>   <span class="number">2</span>   <span class="number">6</span>   <span class="number">5</span></span><br></pre></td></tr></table></figure></p>
 <p>　　写一个程序来计算从最高点开始在底部任意处结束的路径经过数字的和的最大。每一步可以走到左下方的点也可以到达右下方的点。 </p>
@@ -427,7 +439,7 @@
 <h6 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入"></a>样例输入</h6><pre><code>max=30
 </code></pre><hr>
 <p>先贴上代码，过程明天贴</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> nmt[<span class="number">1001</span>][<span class="number">1001</span>],n,f[<span class="number">1001</span>][<span class="number">1001</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mx</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span><span class="comment">//max函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a&gt;b?a:b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n ; i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=i ; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;nmt[i][j];<span class="comment">//输入数塔</span></span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n ; i++)f[n][i]=nmt[n][i];<span class="comment">//最底层状态 </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>; i&gt;<span class="number">0</span> ; i--)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=i ; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        f[i][j]=nmt[i][j]+mx(f[i+<span class="number">1</span>][j],f[i+<span class="number">1</span>][j+<span class="number">1</span>]);<span class="comment">//状态转移方程</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"max="</span>&lt;&lt;f[<span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></h4>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> nmt[<span class="number">1001</span>][<span class="number">1001</span>],n,f[<span class="number">1001</span>][<span class="number">1001</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">mx</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span><span class="comment">//max函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a&gt;b?a:b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n ; i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=i ; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;nmt[i][j];<span class="comment">//输入数塔</span></span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n ; i++)f[n][i]=nmt[n][i];<span class="comment">//最底层状态 </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>; i&gt;<span class="number">0</span> ; i--)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=i ; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        f[i][j]=nmt[i][j]+mx(f[i+<span class="number">1</span>][j],f[i+<span class="number">1</span>][j+<span class="number">1</span>]);<span class="comment">//状态转移方程</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"max="</span>&lt;&lt;f[<span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -469,6 +481,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/25/Best/" rel="prev" title="最佳调度问题">
+                最佳调度问题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -549,7 +565,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -583,7 +599,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -624,6 +642,10 @@
                     <a href="https://hfanss.com/" title="幻凡ss" target="_blank">幻凡ss</a>
                   </li>
                 
+                  <li class="links-of-blogroll-item">
+                    <a href="https://frederror.github.io/" title="Fred`s Blog" target="_blank">Fred`s Blog</a>
+                  </li>
+                
               </ul>
             </div>
           
@@ -646,20 +668,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">数塔问题
-时间限制: 1 Sec  内存限制: 128 MB
-问题描述考虑在下面被显示的数字金字塔：12345        7       3   8     8   1   0   2   7   4   4 4   5   2   6   5
-　　写一个程序来计算从最高点开始在底部任意处结束的路径经过数字的和的最大。每一步可以走到左下方的点也可以到达右下方的点。 
-　　在上面的样例中,从7到3 到8到7 到 5 的路径产生了最大和：30。
-输入　　第一个行包含 R(1&lt;= R&lt;=1000) ，表示行的数目。 
-　　后面每行为这个数字金字塔特定行包含的整数。
-　　所有的整数是非负的且不大于100。
-输出　　输出一行，内容为”max=X”，其中X为最大和。
-样例输入12345657 3   8 8   1   0 2   7   4   4 4   5   2   6   5
-样例输入max=30
-
-先贴上代码，过程明天贴
-12345678910111213141516171819202122232425#include &lt;iostream&gt;using namespace std;int nmt[1001][1001],n,f[1001][1001];int mx(int a,int b)//max函数{    return a&gt;b?a:b;}int main(int argc, char *argv[]){    cin&gt;&gt;n;    for(int i=1; i&lt;=n ; i++)    for(int j=1; j&lt;=i ; j++)    {        cin&gt;&gt;nmt[i][j];//输入数塔    }         for(int i=1; i&lt;=n ; i++)f[n][i]=nmt[n][i];//最底层状态     for(int i=n-1; i&gt;0 ; i--)    for(int j=1; j&lt;=i ; j++)    {        f[i][j]=nmt[i][j]+mx(f[i+1][j],f[i+1][j+1]);//状态转移方程    }    cout&lt;&lt;&quot;max=&quot;&lt;&lt;f[1][1];    return 0;}</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#问题描述"><span class="nav-number">1.0.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#输入"><span class="nav-number">1.0.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#输出"><span class="nav-number">1.0.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#样例输入"><span class="nav-number">1.0.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#样例输入-1"><span class="nav-number">1.0.5.</span> <span class="nav-text">样例输入</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">数塔问题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#问题描述"><span class="nav-number">1.0.0.0.0.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#输入"><span class="nav-number">1.0.0.0.0.2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#输出"><span class="nav-number">1.0.0.0.0.3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#样例输入"><span class="nav-number">1.0.0.0.0.4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#样例输入-1"><span class="nav-number">1.0.0.0.0.5.</span> <span class="nav-text">样例输入</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
