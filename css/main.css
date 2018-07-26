@@ -1858,7 +1858,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffcf5e;
+  background: #d1ff4a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3152,4 +3152,14 @@ body {
 }
 .header-inner {
   opacity: 0.9;
+}
+.btn {
+  border-color: #fc6423;
+  color: #fc6423;
+  background: #fff;
+}
+.btn:hover {
+  border-color: #fc6423;
+  color: #fff;
+  background: #fc6423;
 }
